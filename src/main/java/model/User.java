@@ -9,7 +9,7 @@ public class User {
         this.password = password;
     }
 
-    int verify(String userId, String password) {
+    public int verify(String userId, String password) {
         if (this.libraryNumber == userId && this.password == password) {
             return 1;
         }

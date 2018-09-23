@@ -12,4 +12,8 @@ public class InputDriver {
     public String getTitle() {
         return scanner.nextLine();
     }
+
+    public String getUserDetails() {
+        return scanner.nextLine();
+    }
 }

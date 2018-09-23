@@ -1,4 +1,4 @@
-package controller;
+package controller.Commands;
 
 import model.Library;
 import view.InputDriver;
