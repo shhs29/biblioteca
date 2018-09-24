@@ -1,5 +1,6 @@
 package controller;
 
+import controller.Commands.AuthenticatedCommand;
 import model.*;
 import view.InputDriver;
 import view.OutputDriver;
@@ -35,7 +36,7 @@ public class LibraryManagementSystem {
             }
             option = input.takeInput();
             if (option < menu.length) {
-                menu[option].perform(library,user, output, input);
+                menu[option].perform(library, user, output, input);
             } else {
                 output.print("Select a valid option!");
             }

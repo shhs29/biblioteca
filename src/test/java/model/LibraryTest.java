@@ -56,7 +56,7 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isCheckedOut = library.checkOutItem(user, "Tinkle", ItemType.BOOK);
+        boolean isCheckedOut = library.checkOutItem("Tinkle", ItemType.BOOK);
         assertFalse(library.contains("Tinkle",ItemType.BOOK));
         assertTrue(isCheckedOut);
     }
@@ -70,7 +70,7 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isCheckedOut = library.checkOutItem(user, "Gullivers Travels", ItemType.BOOK);
+        boolean isCheckedOut = library.checkOutItem("Gullivers Travels", ItemType.BOOK);
 
         assertFalse(isCheckedOut);
     }
@@ -84,8 +84,8 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isCheckedOut = library.checkOutItem(user, "Tinkle", ItemType.BOOK);
-        boolean isReturned = library.returnItem(user, "Tinkle", ItemType.BOOK);
+        boolean isCheckedOut = library.checkOutItem( "Tinkle", ItemType.BOOK);
+        boolean isReturned = library.returnItem( "Tinkle", ItemType.BOOK);
         assertTrue(library.contains("Tinkle",ItemType.BOOK));
         assertTrue(isReturned);
     }
@@ -99,7 +99,7 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isReturned = library.returnItem(user, "The Fault In Our Stars", ItemType.BOOK);
+        boolean isReturned = library.returnItem( "The Fault In Our Stars", ItemType.BOOK);
 
         assertFalse(isReturned);
     }
@@ -128,8 +128,8 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isCheckedOut = library.checkOutItem(user, "Paper Towns", ItemType.MOVIE);
-        boolean isReturned = library.returnItem(user, "Paper Towns", ItemType.MOVIE);
+        boolean isCheckedOut = library.checkOutItem("Paper Towns", ItemType.MOVIE);
+        boolean isReturned = library.returnItem( "Paper Towns", ItemType.MOVIE);
         assertTrue(library.contains("Paper Towns",ItemType.MOVIE));
         assertTrue(isReturned);
     }
@@ -142,7 +142,7 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
-        boolean isReturned = library.returnItem(user, "The Fault In Our Stars", ItemType.MOVIE);
+        boolean isReturned = library.returnItem("The Fault In Our Stars", ItemType.MOVIE);
 
         assertFalse(isReturned);
     }
@@ -156,7 +156,7 @@ class LibraryTest {
         Library library = new Library(itemList);
 
         library.addUser(new User("123-4567", "user@123"));
-        boolean isCheckedOut = library.checkOutItem(user, "Paper Towns", ItemType.MOVIE);
+        boolean isCheckedOut = library.checkOutItem( "Paper Towns", ItemType.MOVIE);
         assertFalse(library.contains("Paper Towns",ItemType.MOVIE));
         assertTrue(isCheckedOut);
     }
@@ -170,7 +170,7 @@ class LibraryTest {
         Library library = new Library(itemList);
         library.addUser(new User("123-4567", "user@123"));
 
-        boolean isCheckedOut = library.checkOutItem(user, "Jurassic Park", ItemType.MOVIE);
+        boolean isCheckedOut = library.checkOutItem("Jurassic Park", ItemType.MOVIE);
 
         assertFalse(isCheckedOut);
     }

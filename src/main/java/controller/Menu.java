@@ -15,7 +15,8 @@ public enum Menu {
     RETURN_BOOK("3.Return Book", new AuthenticatedCommand(new ReturnBookCommand())),
     LIST_MOVIES("4.List Movies", new ListMoviesCommand()),
     CHECKOUT_MOVIE("5.Checkout Movie", new AuthenticatedCommand(new CheckOutMoviesCommand())),
-    RETURN_MOVIE("6.Return Movie", new AuthenticatedCommand(new ReturnMovieCommand()));
+    RETURN_MOVIE("6.Return Movie", new AuthenticatedCommand(new ReturnMovieCommand())),
+    LOG_OUT("7.Log Out",new AuthenticatedCommand(new LogOutCommand()));
 
     private String string;
     private Command command;

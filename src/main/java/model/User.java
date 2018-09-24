@@ -22,9 +22,7 @@ public class User {
     }
 
     void addItem(LibraryItem libraryItem) {
-        System.out.println("Added");
         itemList.add(libraryItem);
-        System.out.println(itemList);
     }
 
     @Override

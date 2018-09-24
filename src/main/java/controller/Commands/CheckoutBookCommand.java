@@ -13,7 +13,7 @@ public class CheckoutBookCommand implements Command {
     public void perform(Library library,User user, OutputDriver outputDriver, InputDriver inputDriver) {
         outputDriver.print("Enter the book");
         String string = inputDriver.getTitle();
-        boolean isCheckedOut = library.checkOutItem(user,string, ItemType.BOOK);
+        boolean isCheckedOut = library.checkOutItem(string, ItemType.BOOK);
         if (isCheckedOut) {
             outputDriver.print("Thank You! Enjoy the Book");
         } else {

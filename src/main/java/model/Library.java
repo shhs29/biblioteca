@@ -13,6 +13,9 @@ public class Library {
         this.itemList = itemList;
         userList = new ArrayList<>();
         currentUser = null;
+        userList = new ArrayList<>();
+        userList.add(new User("123-4567", "user@123"));
+        userList.add(new User("678-1423", "user@456"));
     }
 
     public List<String> getItemDetails(ItemType itemType) {
@@ -25,16 +28,16 @@ public class Library {
         return itemTitles;
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         userList.add(user);
     }
 
-    public boolean checkOutItem(User user, String title, ItemType itemType) {
+    public boolean checkOutItem(String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
                 if (libraryItem.getName().equals(title)) {
                     itemList.remove(libraryItem);
-                    user.addItem(libraryItem);
+                    currentUser.addItem(libraryItem);
                     return true;
                 }
             }
@@ -53,8 +56,8 @@ public class Library {
         return false;
     }
 
-    public boolean returnItem(User user, String title, ItemType itemType) {
-        LibraryItem libraryItem = user.findItem(title, itemType);
+    public boolean returnItem(String title, ItemType itemType) {
+        LibraryItem libraryItem = currentUser.findItem(title, itemType);
         if (libraryItem != null) {
             itemList.add(libraryItem);
             return true;
@@ -62,11 +65,37 @@ public class Library {
         return false;
     }
 
-    public void login(User user) {
-        currentUser = user;
+    public boolean login(User user) {
+        if (validateUser(user) == null) {
+            return false;
+        }
+        currentUser = validateUser(user);
+        return true;
     }
 
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         return currentUser;
+    }
+
+    public User isUserPresent(User user) {
+        for (User user1 : userList) {
+            if (user1.equals(user)) {
+                return user1;
+            }
+        }
+        return null;
+    }
+
+    private User validateUser(User user) {
+        for (User userAccount : userList) {
+            if (userAccount.equals(user)) {
+                return userAccount;
+            }
+        }
+        return null;
+    }
+
+    public void setCurrentUser() {
+        currentUser = null;
     }
 }
