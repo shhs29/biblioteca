@@ -51,4 +51,10 @@ class UserTest {
     void testForItemList1(){
        assertTrue(user.isItemListEmpty());
     }
+
+    @DisplayName("should return details of the user")
+    @Test
+    void testForUserDetails(){
+        assertEquals(user.getUserDetails(),"User name,user@example.com,9854673425");
+    }
 }

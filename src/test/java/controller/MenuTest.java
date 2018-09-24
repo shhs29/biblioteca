@@ -46,11 +46,16 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("Tinkle");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         Menu.CHECKOUT_BOOK.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(1)).print("Enter the book");
         verify(outputMock).print("Thank You! Enjoy the Book");
         verify(outputMock, times(0)).print("That book is not available");
     }
@@ -61,11 +66,16 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("The Fault In Our Stars");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         Menu.CHECKOUT_BOOK.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(1)).print("Enter the book");
         verify(outputMock, times(0)).print("Thank You! Enjoy the Book");
         verify(outputMock).print("That book is not available");
     }
@@ -76,12 +86,17 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("").thenReturn("The Fault In Our Stars");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         Menu.CHECKOUT_BOOK.perform(library,user, outputMock, inputMock);
         Menu.RETURN_BOOK.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(2)).print("Enter the book");
         verify(outputMock, times(0)).print("Thank you for returning the book");
         verify(outputMock).print("That is not a valid book to return");
     }
@@ -92,12 +107,17 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("").thenReturn("The Fault In Our Stars");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
         Menu.CHECKOUT_BOOK.perform(library,user, outputMock, inputMock);
         Menu.RETURN_BOOK.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(2)).print("Enter the book");
         verify(outputMock, times(0)).print("Thank you for returning the book");
         verify(outputMock).print("That is not a valid book to return");
     }
@@ -121,13 +141,17 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("Paper Towns");
-
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
 
         Menu.CHECKOUT_MOVIE.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(1)).print("Enter the movie");
         verify(outputMock).print("Thank You! Enjoy the Movie");
         verify(outputMock, times(0)).print("That movie is not available");
     }
@@ -138,14 +162,61 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         InputDriver inputMock = mock(InputDriver.class);
         when(inputMock.getTitle()).thenReturn("The Fault In Our Stars");
-
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
 
         Menu.CHECKOUT_MOVIE.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(1)).print("Enter the movie");
         verify(outputMock, times(0)).print("Thank You! Enjoy the Movie");
         verify(outputMock).print("That movie is not available");
     }
+
+    @DisplayName("should return a movie if option 6 is chosen")
+    @Test
+    void testForReturnMovie() {
+        OutputDriver outputMock = mock(OutputDriver.class);
+        InputDriver inputMock = mock(InputDriver.class);
+        when(inputMock.getTitle()).thenReturn("Paper Towns");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
+        itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
+        itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
+        itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
+        Library library = new Library(itemList);
+        Menu.CHECKOUT_MOVIE.perform(library,user, outputMock, inputMock);
+        Menu.RETURN_MOVIE.perform(library,user, outputMock, inputMock);
+        verify(outputMock,times(1)).print("Library Number:");
+        verify(outputMock,times(1)).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(1)).print("Enter the movie");
+        verify(outputMock, times(0)).print("Thank you for returning the movie");
+        verify(outputMock).print("That is not a valid movie to return");
+    }
+
+    @DisplayName("should not return a movie if the movie is not in this library")
+    @Test
+    void testForReturnMovieUnsuccessful() {
+        OutputDriver outputMock = mock(OutputDriver.class);
+        InputDriver inputMock = mock(InputDriver.class);
+        when(inputMock.getTitle()).thenReturn("").thenReturn("The Fault In Our Stars");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
+        itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
+        itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
+        itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
+        Library library = new Library(itemList);
+        Menu.CHECKOUT_MOVIE.perform(library,user, outputMock, inputMock);
+        Menu.RETURN_MOVIE.perform(library,user, outputMock, inputMock);
+        verify(outputMock).print("Library Number:");
+        verify(outputMock).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock,times(2)).print("Enter the movie");
+        verify(outputMock, times(0)).print("Thank you for returning the movie");
+        verify(outputMock).print("That is not a valid movie to return");
+    }
+
 }

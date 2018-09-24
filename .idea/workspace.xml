@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74301543-d731-4dea-9fd7-f2821c7a2653" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LibraryManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LibraryManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/UserTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,22 +41,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="144" />
+          <entry key="java" value="193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="144" />
+          <entry key="JAVA" value="193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3945" />
+          <entry key="java" value="4776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3945" />
+          <entry key="JAVA" value="4776" />
         </counts>
       </usages-collector>
     </session>
@@ -64,17 +67,41 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#592#593#0" expanded="true" />
                 <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#891#892#0" expanded="true" />
-                <element signature="e#1667#1668#0" expanded="true" />
-                <element signature="e#1727#1728#0" expanded="true" />
-                <element signature="e#1560#1561#0" expanded="true" />
-                <element signature="e#1599#1600#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1079#1080#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/model/UserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="57" column="81" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1851#1852#0" expanded="true" />
+                <element signature="e#1902#1903#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/UserDetailsCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,34 +110,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="321">
+              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/controller/MenuTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/AuthenticatedCommandTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="284">
+              <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -118,17 +128,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="210">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/UserDetailsCommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state relative-caret-position="333">
+              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,16 +150,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BibliotecaApplication.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,26 +168,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/LogOutCommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Library.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            <state relative-caret-position="289">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding>
-                <element signature="e#750#751#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#2224#2225#0" expanded="true" />
-                <element signature="e#2258#2259#0" expanded="true" />
-                <element signature="e#2737#2738#0" expanded="true" />
-                <element signature="e#2771#2772#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,8 +185,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -568,31 +567,34 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/ListBooksCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/ListMoviesCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/QuitCommand.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/MenuTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controller/LibraryManagementSystemTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ListBooksCommandTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controller/Commands/QuitCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/controller/Commands/AuthenticatedCommandTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/model/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/model/LibraryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/LibraryItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Movie.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/LibraryManagementSystem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/Menu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Library.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/LogOutCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Library.java" />
+        <option value="$PROJECT_DIR$/src/test/java/model/LibraryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/model/UserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/Commands/UserDetailsCommand.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/Commands/UserDetailsCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/Menu.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controller/MenuTest.java" />
       </list>
     </option>
   </component>
@@ -665,7 +667,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537778568577" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537781196331" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
   </component>
@@ -690,88 +692,101 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CheckoutBookCommandTest">
-    <configuration name="BibliotecaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BibliotecaApplication" />
-      <module name="test_main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckoutBookCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MenuTest.testForCheckOutBook">
+    <configuration name="MenuTest.testForCheckOutBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.Commands.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller.Commands" />
-      <option name="MAIN_CLASS_NAME" value="controller.Commands.CheckoutBookCommandTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.LibraryTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryTest.testForCheckOutBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.LibraryTest" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MenuTest" />
       <option name="METHOD_NAME" value="testForCheckOutBook" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testForItemList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MenuTest.testForCheckOutBookNotAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.UserTest" />
-      <option name="METHOD_NAME" value="testForItemList" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MenuTest" />
+      <option name="METHOD_NAME" value="testForCheckOutBookNotAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testForCheckOutMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MenuTest" />
+      <option name="METHOD_NAME" value="testForCheckOutMovie" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testForReturnBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MenuTest" />
+      <option name="METHOD_NAME" value="testForReturnBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testForReturnBookUnsuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MenuTest" />
+      <option name="METHOD_NAME" value="testForReturnBookUnsuccessful" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BibliotecaApplication" />
-      <item itemvalue="JUnit.UserTest.testForItemList" />
-      <item itemvalue="JUnit.LibraryTest.testForCheckOutBook" />
-      <item itemvalue="JUnit.LibraryTest" />
-      <item itemvalue="JUnit.CheckoutBookCommandTest" />
+      <item itemvalue="JUnit.MenuTest.testForCheckOutMovie" />
+      <item itemvalue="JUnit.MenuTest.testForReturnBookUnsuccessful" />
+      <item itemvalue="JUnit.MenuTest.testForReturnBook" />
+      <item itemvalue="JUnit.MenuTest.testForCheckOutBookNotAvailable" />
+      <item itemvalue="JUnit.MenuTest.testForCheckOutBook" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CheckoutBookCommandTest" />
-        <item itemvalue="Application.BibliotecaApplication" />
-        <item itemvalue="JUnit.LibraryTest" />
-        <item itemvalue="JUnit.LibraryTest.testForCheckOutBook" />
-        <item itemvalue="JUnit.UserTest.testForItemList" />
+        <item itemvalue="JUnit.MenuTest.testForCheckOutBook" />
+        <item itemvalue="JUnit.MenuTest.testForCheckOutBookNotAvailable" />
+        <item itemvalue="JUnit.MenuTest.testForReturnBook" />
+        <item itemvalue="JUnit.MenuTest.testForReturnBookUnsuccessful" />
+        <item itemvalue="JUnit.MenuTest.testForCheckOutMovie" />
       </list>
     </recent_temporary>
   </component>
@@ -789,42 +804,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthenticatedCommandTest_testForUserLogin - 2018.09.24 at 11h 20m 35s.xml">
-      <configuration name="AuthenticatedCommandTest.testForUserLogin" configurationId="JUnit" />
+    <history-entry file="UserTest_testForUserDetails - 2018.09.24 at 14h 40m 29s.xml">
+      <configuration name="UserTest.testForUserDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthenticatedCommandTest_testForUserLogin - 2018.09.24 at 11h 20m 59s.xml">
-      <configuration name="AuthenticatedCommandTest.testForUserLogin" configurationId="JUnit" />
+    <history-entry file="UserDetailsCommandTest_testForUserDetails - 2018.09.24 at 14h 45m 12s.xml">
+      <configuration name="UserDetailsCommandTest.testForUserDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthenticatedCommandTest - 2018.09.24 at 11h 21m 03s.xml">
-      <configuration name="AuthenticatedCommandTest" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovie - 2018.09.24 at 14h 47m 33s.xml">
+      <configuration name="MenuTest.testForReturnMovie" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthenticatedCommandTest_testForUserLogin1 - 2018.09.24 at 11h 26m 40s.xml">
-      <configuration name="AuthenticatedCommandTest.testForUserLogin1" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 48m 24s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_testForUserValidation - 2018.09.24 at 11h 35m 12s.xml">
-      <configuration name="UserTest.testForUserValidation" configurationId="JUnit" />
+    <history-entry file="MenuTest - 2018.09.24 at 14h 49m 16s.xml">
+      <configuration name="MenuTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_testForItemList - 2018.09.24 at 11h 50m 22s.xml">
-      <configuration name="UserTest.testForItemList" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 49m 54s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_testForItemList1 - 2018.09.24 at 11h 50m 47s.xml">
-      <configuration name="UserTest.testForItemList1" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 51m 34s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_testForItemList - 2018.09.24 at 11h 50m 49s.xml">
-      <configuration name="UserTest.testForItemList" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 51m 51s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest_testForCheckOutBook - 2018.09.24 at 12h 05m 17s.xml">
-      <configuration name="LibraryTest.testForCheckOutBook" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 52m 44s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest - 2018.09.24 at 12h 06m 24s.xml">
-      <configuration name="LibraryTest" configurationId="JUnit" />
+    <history-entry file="MenuTest_testForReturnMovieUnsuccessful - 2018.09.24 at 14h 53m 00s.xml">
+      <configuration name="MenuTest.testForReturnMovieUnsuccessful" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -833,7 +848,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -891,42 +906,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java</url>
           <line>15</line>
           <properties />
@@ -956,12 +935,6 @@
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BibliotecaApplication.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -977,108 +950,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ListBooksCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ListMoviesCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/QuitCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/MenuTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="146" column="49" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/controller/LibraryManagementSystemTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3564">
           <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ListBooksCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/QuitCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/model/LibraryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="176" column="1" lean-forward="true" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ItemType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1089,42 +964,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BibliotecaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding>
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/model/UserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding>
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/LibraryItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1135,10 +981,243 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ReturnMovieCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ReturnBookCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/QuitCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/QuitCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="56" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="21" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ListMoviesCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ListMoviesCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ListBooksCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/ListBooksCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/CheckOutMoviesCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/CheckoutBookCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/LibraryItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ItemType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/model/LibraryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/AuthenticatedCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding>
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/LogOutCommand.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/LogOutCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/model/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="57" column="81" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1851#1852#0" expanded="true" />
+            <element signature="e#1902#1903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/UserDetailsCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/UserDetailsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1147,101 +1226,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="321">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/controller/MenuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controller/Commands/AuthenticatedCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/AuthenticatedCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding>
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#2224#2225#0" expanded="true" />
-            <element signature="e#2258#2259#0" expanded="true" />
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2771#2772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnBookCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/ReturnMovieCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckoutBookCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Commands/CheckOutMoviesCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BibliotecaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="284">
+          <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
         </state>
       </provider>
     </entry>

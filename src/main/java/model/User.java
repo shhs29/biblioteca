@@ -8,21 +8,34 @@ public class User {
     private final String libraryNumber;
     private final String password;
     private List<LibraryItem> itemList;
+    private final String name;
+    private final String phoneNumber;
+    private final String emailId;
 
     public User() {
         this.libraryNumber = null;
         this.password = null;
         this.itemList = new ArrayList<>();
+        this.name = "User name";
+        this.phoneNumber = "9854673425";
+        this.emailId = "user@example.com";
     }
 
     public User(String libraryNumber, String password) {
         this.libraryNumber = libraryNumber;
         this.password = password;
         this.itemList = new ArrayList<>();
+        this.name = "User name";
+        this.phoneNumber = "9854673425";
+        this.emailId = "user@example.com";
     }
 
     void addItem(LibraryItem libraryItem) {
         itemList.add(libraryItem);
+    }
+
+    public String getUserDetails() {
+        return this.name + "," + this.emailId + "," + this.phoneNumber;
     }
 
     @Override
@@ -57,6 +70,6 @@ public class User {
     }
 
     boolean isItemListEmpty() {
-       return itemList.isEmpty();
+        return itemList.isEmpty();
     }
 }

@@ -77,15 +77,6 @@ public class Library {
         return currentUser;
     }
 
-    public User isUserPresent(User user) {
-        for (User user1 : userList) {
-            if (user1.equals(user)) {
-                return user1;
-            }
-        }
-        return null;
-    }
-
     private User validateUser(User user) {
         for (User userAccount : userList) {
             if (userAccount.equals(user)) {
@@ -95,7 +86,7 @@ public class Library {
         return null;
     }
 
-    public void setCurrentUser() {
-        currentUser = null;
+    public void setCurrentUser(User user) {
+        currentUser = user;
     }
 }
