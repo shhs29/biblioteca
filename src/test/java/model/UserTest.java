@@ -38,4 +38,17 @@ class UserTest {
         user.addItem(new Book("Tinkle","Anant Pai","1996"));
         assertNull(user.findItem("Gullivers Travels",ItemType.BOOK));
     }
+
+    @DisplayName("should return false if item list is not empty")
+    @Test
+    void testForItemList(){
+        user.addItem(new Book("Tinkle","Anant Pai","1996"));
+        assertFalse(user.isItemListEmpty());
+    }
+
+    @DisplayName("should return true if item list is empty")
+    @Test
+    void testForItemList1(){
+       assertTrue(user.isItemListEmpty());
+    }
 }

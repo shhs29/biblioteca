@@ -26,8 +26,9 @@ public class LibraryManagementSystem {
 
     public void showMainMenu(OutputDriver output, InputDriver input) {
         int option;
-        User user = new User();
+        User user;
         do {
+            user = library.getCurrentUser();
             Menu[] menu = Menu.values();
             for (Menu menuOption : menu) {
                 menuOption.displayMenu(output);

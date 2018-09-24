@@ -5,7 +5,7 @@ public interface LibraryItem {
 
     String toString();
 
-    boolean equals(Object o);
+    boolean equals(String string);
 
     ItemType getType();
 }

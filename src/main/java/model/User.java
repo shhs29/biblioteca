@@ -22,7 +22,9 @@ public class User {
     }
 
     void addItem(LibraryItem libraryItem) {
+        System.out.println("Added");
         itemList.add(libraryItem);
+        System.out.println(itemList);
     }
 
     @Override
@@ -30,7 +32,7 @@ public class User {
         return "itemList=" + itemList;
     }
 
-    LibraryItem findItem(String title, ItemType itemType) {
+    public LibraryItem findItem(String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
                 if (libraryItem.getName().equals(title)) {
@@ -54,5 +56,9 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(libraryNumber, password);
+    }
+
+    boolean isItemListEmpty() {
+       return itemList.isEmpty();
     }
 }

@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibraryTest {
 
     private List<LibraryItem> itemList = new ArrayList<>();
-    private List<User> userList = new ArrayList<>();
-    private User user = new User("123-4567","user@123");
+    private User user = new User("123-4567", "user@123");
 
 
     @DisplayName("should return the details of the book")
@@ -56,9 +55,9 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isCheckedOut = library.checkOutItem(user,"Tinkle",ItemType.BOOK);
-
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isCheckedOut = library.checkOutItem(user, "Tinkle", ItemType.BOOK);
+        assertFalse(library.contains("Tinkle",ItemType.BOOK));
         assertTrue(isCheckedOut);
     }
 
@@ -70,8 +69,8 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isCheckedOut = library.checkOutItem(user,"Gullivers Travels",ItemType.BOOK);
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isCheckedOut = library.checkOutItem(user, "Gullivers Travels", ItemType.BOOK);
 
         assertFalse(isCheckedOut);
     }
@@ -84,10 +83,10 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isCheckedOut = library.checkOutItem(user,"Tinkle",ItemType.BOOK);
-        boolean isReturned = library.returnItem(user,"Tinkle",ItemType.BOOK);
-
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isCheckedOut = library.checkOutItem(user, "Tinkle", ItemType.BOOK);
+        boolean isReturned = library.returnItem(user, "Tinkle", ItemType.BOOK);
+        assertTrue(library.contains("Tinkle",ItemType.BOOK));
         assertTrue(isReturned);
     }
 
@@ -99,8 +98,8 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isReturned = library.returnItem(user,"The Fault In Our Stars",ItemType.BOOK);
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isReturned = library.returnItem(user, "The Fault In Our Stars", ItemType.BOOK);
 
         assertFalse(isReturned);
     }
@@ -128,10 +127,10 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isCheckedOut = library.checkOutItem(user,"Paper Towns",ItemType.MOVIE);
-        boolean isReturned = library.returnItem(user,"Paper Towns",ItemType.MOVIE);
-
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isCheckedOut = library.checkOutItem(user, "Paper Towns", ItemType.MOVIE);
+        boolean isReturned = library.returnItem(user, "Paper Towns", ItemType.MOVIE);
+        assertTrue(library.contains("Paper Towns",ItemType.MOVIE));
         assertTrue(isReturned);
     }
 
@@ -142,8 +141,8 @@ class LibraryTest {
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
-
-        boolean isReturned = library.returnItem(user,"The Fault In Our Stars",ItemType.MOVIE);
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isReturned = library.returnItem(user, "The Fault In Our Stars", ItemType.MOVIE);
 
         assertFalse(isReturned);
     }
@@ -156,23 +155,22 @@ class LibraryTest {
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
 
-
-        boolean isCheckedOut = library.checkOutItem(user,"Paper Towns",ItemType.MOVIE);
-
+        library.addUser(new User("123-4567", "user@123"));
+        boolean isCheckedOut = library.checkOutItem(user, "Paper Towns", ItemType.MOVIE);
+        assertFalse(library.contains("Paper Towns",ItemType.MOVIE));
         assertTrue(isCheckedOut);
     }
 
     @DisplayName("should return false if a movie is not available to check-out")
     @Test
     public void testForCheckOutWhenMovieNotAvailable() {
-        List<Book> bookList = new ArrayList<>();
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
         Library library = new Library(itemList);
+        library.addUser(new User("123-4567", "user@123"));
 
-
-        boolean isCheckedOut = library.checkOutItem(user,"Jurassic Park",ItemType.MOVIE);
+        boolean isCheckedOut = library.checkOutItem(user, "Jurassic Park", ItemType.MOVIE);
 
         assertFalse(isCheckedOut);
     }

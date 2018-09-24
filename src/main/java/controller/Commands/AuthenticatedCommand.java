@@ -30,16 +30,17 @@ public class AuthenticatedCommand implements Command {
             outputDriver.print("Password:");
             password = inputDriver.getUserDetails();
             user = new User(userId,password);
+            library.login(user);
             isLogged = validateUser(user, userList);
+            System.out.println(isLogged);
             if (isLogged) {
                 outputDriver.print("Login Successful");
-
-                this.command.perform(library,user, outputDriver, inputDriver);
-
+                library.addUser(user);
             } else {
                 outputDriver.print("Please login first");
             }
-        } else {
+        }
+        if(isLogged){
             this.command.perform(library, user, outputDriver, inputDriver);
         }
     }

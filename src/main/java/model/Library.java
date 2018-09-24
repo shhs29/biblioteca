@@ -6,13 +6,13 @@ import java.util.List;
 //manages the jobs of a librarian
 public class Library {
     private List<LibraryItem> itemList;
-    private List<LibraryItem> checkedOutList;
     public List<User> userList;
+    private User currentUser;
 
     public Library(List<LibraryItem> itemList) {
         this.itemList = itemList;
         userList = new ArrayList<>();
-        checkedOutList = new ArrayList<>();
+        currentUser = null;
     }
 
     public List<String> getItemDetails(ItemType itemType) {
@@ -25,14 +25,16 @@ public class Library {
         return itemTitles;
     }
 
+    public void addUser(User user){
+        userList.add(user);
+    }
+
     public boolean checkOutItem(User user, String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
                 if (libraryItem.getName().equals(title)) {
                     itemList.remove(libraryItem);
-                    userList.add(user);
                     user.addItem(libraryItem);
-                    checkedOutList.add(libraryItem);
                     return true;
                 }
             }
@@ -54,12 +56,17 @@ public class Library {
     public boolean returnItem(User user, String title, ItemType itemType) {
         LibraryItem libraryItem = user.findItem(title, itemType);
         if (libraryItem != null) {
-            userList.remove(user);
-            checkedOutList.remove(libraryItem);
             itemList.add(libraryItem);
             return true;
         }
         return false;
     }
 
+    public void login(User user) {
+        currentUser = user;
+    }
+
+    public User getCurrentUser(){
+        return currentUser;
+    }
 }

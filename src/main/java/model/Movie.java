@@ -36,10 +36,7 @@ public class Movie implements LibraryItem {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Movie that = (Movie) o;
-        return this.name.equals(that.name);
+    public boolean equals(String string) {
+        return this.name.equals(string);
     }
 }

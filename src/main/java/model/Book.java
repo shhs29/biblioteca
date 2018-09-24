@@ -30,10 +30,7 @@ public class Book implements LibraryItem{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book that = (Book) o;
-        return this.title.equals(that.title);
+    public boolean equals(String string) {
+        return this.title.equals(string);
     }
 }
