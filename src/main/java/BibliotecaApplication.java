@@ -11,8 +11,7 @@ import java.util.List;
 public class BibliotecaApplication {
     public static void main(String[] args) {
         List<LibraryItem> libraryItemList = new ArrayList<>();
-        List<User> userList = new ArrayList<>();
-        LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(libraryItemList,userList);
+        LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(libraryItemList);
         OutputDriver output = new OutputDriver();
         InputDriver input = new InputDriver();
         libraryManagementSystem.showWelcomeMessage(output);

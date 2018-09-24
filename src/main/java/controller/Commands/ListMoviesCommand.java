@@ -2,13 +2,14 @@ package controller.Commands;
 
 import model.ItemType;
 import model.Library;
+import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
 import java.util.List;
 
 public class ListMoviesCommand implements Command {
-    public void perform(Library library, OutputDriver outputDriver, InputDriver inputDriver) {
+    public void perform(Library library, List<User> userList, OutputDriver outputDriver, InputDriver inputDriver) {
         List<String> movieList = library.getItemDetails(ItemType.MOVIE);
         outputDriver.printHorizontalLine();
         outputDriver.printAsColumnsMovie("Name,Director,Release Year,Rating");

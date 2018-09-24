@@ -2,8 +2,11 @@ package controller;
 
 import controller.Commands.*;
 import model.Library;
+import model.User;
 import view.InputDriver;
 import view.OutputDriver;
+
+import java.util.List;
 
 public enum Menu {
     QUIT("0.Quit", new QuitCommand()),
@@ -22,8 +25,8 @@ public enum Menu {
         this.command = command;
     }
 
-    public void perform(Library library, OutputDriver output, InputDriver input) {
-        this.command.perform(library, output, input);
+    public void perform(Library library, List<User> userList, OutputDriver output, InputDriver input) {
+        this.command.perform(library,userList, output, input);
     }
 
     public void displayMenu(OutputDriver output) {

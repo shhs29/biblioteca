@@ -9,9 +9,9 @@ public class Library {
     private List<LibraryItem> checkedOutList;
     public List<User> userList;
 
-    public Library(List<LibraryItem> itemList,List<User> userList) {
+    public Library(List<LibraryItem> itemList) {
         this.itemList = itemList;
-        this.userList = userList;
+        userList= new ArrayList<>();
         checkedOutList = new ArrayList<>();
     }
 

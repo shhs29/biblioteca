@@ -4,20 +4,21 @@ import model.*;
 import view.InputDriver;
 import view.OutputDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 //controller
 public class LibraryManagementSystem {
     private Library library;
-    public List<User> userList;
+    public List<User> userList = new ArrayList<>();
 
-    public LibraryManagementSystem(List<LibraryItem> itemList,List<User> userList) {
+    public LibraryManagementSystem(List<LibraryItem> itemList) {
         addDummyBooks(itemList);
         addDummyMovies(itemList);
         userList.add(new User("123-4567","user@123"));
         userList.add(new User("678-1423","user@456"));
-        library = new Library(itemList,userList);
+        library = new Library(itemList);
     }
 
     private void addDummyMovies(List<LibraryItem> itemList) {
@@ -35,7 +36,7 @@ public class LibraryManagementSystem {
             }
             option = input.takeInput();
             if(option<menu.length){
-                menu[option].perform(library,output,input);
+                menu[option].perform(library,userList,output,input);
             }
             else {
                 output.print("Select a valid option!");
