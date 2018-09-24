@@ -5,9 +5,10 @@ import model.Library;
 import view.InputDriver;
 import view.OutputDriver;
 
-public class ReturnMovieCommand extends AuthenticatedCommand{
+public class ReturnMovieCommand implements Command{
     @Override
     public void perform(Library library, OutputDriver outputDriver, InputDriver inputDriver){
+        outputDriver.print("Enter the movie");
         String string = inputDriver.getTitle();
         boolean isReturned = library.returnItem(string, ItemType.MOVIE);
         if (isReturned) {

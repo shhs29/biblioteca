@@ -1,5 +1,6 @@
 import controller.LibraryManagementSystem;
 import model.LibraryItem;
+import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
@@ -10,7 +11,8 @@ import java.util.List;
 public class BibliotecaApplication {
     public static void main(String[] args) {
         List<LibraryItem> libraryItemList = new ArrayList<>();
-        LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(libraryItemList);
+        List<User> userList = new ArrayList<>();
+        LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(libraryItemList,userList);
         OutputDriver output = new OutputDriver();
         InputDriver input = new InputDriver();
         libraryManagementSystem.showWelcomeMessage(output);

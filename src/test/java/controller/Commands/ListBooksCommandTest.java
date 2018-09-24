@@ -1,10 +1,7 @@
 package controller.Commands;
 
 import controller.Commands.ListBooksCommand;
-import model.Book;
-import model.Library;
-import model.LibraryItem;
-import model.Movie;
+import model.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import view.InputDriver;
@@ -18,6 +15,7 @@ import static org.mockito.Mockito.verify;
 
 class ListBooksCommandTest {
     private List<LibraryItem> itemList = new ArrayList<>();
+    private List<User> userList = new ArrayList<>();
     private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
     private ListBooksCommand listBooksCommand = new ListBooksCommand();
@@ -28,7 +26,7 @@ class ListBooksCommandTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         listBooksCommand.perform(library, outputMock, input);
         verify(outputMock).printAsColumns("Tinkle,Anant Pai,1996");
     }

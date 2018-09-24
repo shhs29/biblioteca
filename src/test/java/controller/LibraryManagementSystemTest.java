@@ -1,16 +1,12 @@
 package controller;
 
 import controller.LibraryManagementSystem;
-import model.ItemType;
-import model.LibraryItem;
-import model.Movie;
+import model.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import view.InputDriver;
 import view.OutputDriver;
-
-import model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +19,8 @@ import static org.mockito.Mockito.*;
 class LibraryManagementSystemTest {
 
     private List<LibraryItem> itemList = new ArrayList<>();
-    private LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(itemList);
+    private List<User> userList = new ArrayList<>();
+    private LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(itemList,userList);
 
     private OutputDriver outputMock = mock(OutputDriver.class);
     private InputDriver inputMock = mock(InputDriver.class);

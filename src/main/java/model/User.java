@@ -10,7 +10,7 @@ public class User {
     }
 
     public int verify(String userId, String password) {
-        if (this.libraryNumber == userId && this.password == password) {
+        if (this.libraryNumber.equals(userId) && this.password.equals(password)) {
             return 1;
         }
         return 0;

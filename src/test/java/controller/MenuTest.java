@@ -1,9 +1,6 @@
 package controller;
 
-import model.Library;
-import model.LibraryItem;
-import model.Movie;
-import model.Book;
+import model.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import view.InputDriver;
@@ -16,6 +13,7 @@ import static org.mockito.Mockito.*;
 
 class MenuTest {
     private List<LibraryItem> itemList = new ArrayList<>();
+    private List<User> userList = new ArrayList<>();
     private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
 
@@ -25,7 +23,7 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.LIST_BOOKS.perform(library, outputMock, input);
         verify(outputMock).printAsColumns("Tinkle,Anant Pai,1996");
     }
@@ -36,7 +34,7 @@ class MenuTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.QUIT.perform(library, outputMock, input);
         verify(outputMock).print("Quit");
     }
@@ -50,7 +48,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.CHECKOUT_BOOK.perform(library, outputMock, inputMock);
         verify(outputMock).print("Thank You! Enjoy the Book");
         verify(outputMock, times(0)).print("That book is not available");
@@ -65,7 +63,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.CHECKOUT_BOOK.perform(library, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank You! Enjoy the Book");
         verify(outputMock).print("That book is not available");
@@ -80,7 +78,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.CHECKOUT_BOOK.perform(library, outputMock, inputMock);
         Menu.RETURN_BOOK.perform(library, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank you for returning the book");
@@ -96,7 +94,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
         Menu.CHECKOUT_BOOK.perform(library, outputMock, inputMock);
         Menu.RETURN_BOOK.perform(library, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank you for returning the book");
@@ -110,7 +108,7 @@ class MenuTest {
 
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
 
         Menu.LIST_MOVIES.perform(library, outputMock, input);
         verify(outputMock).printAsColumns("Paper Towns,John Green,2017,Unrated");
@@ -126,7 +124,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
 
         Menu.CHECKOUT_MOVIE.perform(library, outputMock, inputMock);
         verify(outputMock).print("Thank You! Enjoy the Movie");
@@ -143,7 +141,7 @@ class MenuTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
 
         Menu.CHECKOUT_MOVIE.perform(library, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank You! Enjoy the Movie");

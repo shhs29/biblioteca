@@ -8,13 +8,16 @@ import view.OutputDriver;
 import java.util.List;
 
 public class AuthenticatedCommand implements Command {
-    private int count = 0;
+    private static int count = 0;
+    private boolean isLogged = false;
+    private Command command;
 
-    public void perform(Library library, OutputDriver outputDriver, InputDriver inputDriver) {
-
+    public AuthenticatedCommand(Command command) {
+        this.command = command;
     }
 
-    public void userLogin(Library library, OutputDriver outputDriver, InputDriver inputDriver) {
+    @Override
+    public void perform(Library library, OutputDriver outputDriver, InputDriver inputDriver) {
         String userId;
         String password;
         if (count == 0) {
@@ -22,17 +25,22 @@ public class AuthenticatedCommand implements Command {
             userId = inputDriver.getUserDetails();
             outputDriver.print("Password:");
             password = inputDriver.getUserDetails();
-            validateUser(userId,password,userList);
-            count++;
+            isLogged = validateUser(userId, password, library.userList);
+            if (isLogged) {
+                this.command.perform(library, outputDriver, inputDriver);
+                count++;
+            } else {
+                outputDriver.print("Please login first");
+            }
         }
     }
 
-    public int validateUser(String userId, String password, List<User> userList) {
+    private boolean validateUser(String userId, String password, List<User> userList) {
         for (User userAccount : userList) {
             if (userAccount.verify(userId, password) == 1) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 }

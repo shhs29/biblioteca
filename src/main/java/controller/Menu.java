@@ -8,11 +8,11 @@ import view.OutputDriver;
 public enum Menu {
     QUIT("0.Quit", new QuitCommand()),
     LIST_BOOKS("1.List Books", new ListBooksCommand()),
-    CHECKOUT_BOOK("2.Checkout Book", new CheckoutBookCommand()),
-    RETURN_BOOK("3.Return Book", new ReturnBookCommand()),
-    LIST_MOVIES("4.List Movies", new ListMoviesCommand()),
-    CHECKOUT_MOVIE("5.Checkout Movie", new CheckOutMoviesCommand()),
-    RETURN_MOVIE("6.Return Movie", new ReturnMovieCommand());
+    CHECKOUT_BOOK("2.Checkout Book", new AuthenticatedCommand(new CheckoutBookCommand())),
+    RETURN_BOOK("3.Return Book", new AuthenticatedCommand(new ReturnBookCommand())),
+    LIST_MOVIES("4.List Movies",new ListMoviesCommand()),
+    CHECKOUT_MOVIE("5.Checkout Movie", new AuthenticatedCommand(new CheckOutMoviesCommand())),
+    RETURN_MOVIE("6.Return Movie", new AuthenticatedCommand(new ReturnMovieCommand()));
 
     private String string;
     private Command command;

@@ -1,12 +1,8 @@
 package controller.Commands;
 
 import controller.Commands.ListMoviesCommand;
-import model.Book;
-import model.Library;
+import model.*;
 
-import model.LibraryItem;
-
-import model.Movie;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import view.InputDriver;
@@ -21,7 +17,7 @@ import static org.mockito.Mockito.verify;
 class ListMoviesCommandTest {
 
     private List<LibraryItem> itemList = new ArrayList<>();
-
+    private List<User> userList = new ArrayList<>();
     private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
     private ListMoviesCommand listMoviesCommand = new ListMoviesCommand();
@@ -33,7 +29,7 @@ class ListMoviesCommandTest {
 
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList);
+        Library library = new Library(itemList,userList);
 
         listMoviesCommand.perform(library, outputMock, input);
         verify(outputMock).printAsColumns("Paper Towns,John Green,2017,Unrated");

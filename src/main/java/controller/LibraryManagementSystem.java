@@ -10,11 +10,14 @@ import java.util.List;
 //controller
 public class LibraryManagementSystem {
     private Library library;
+    public List<User> userList;
 
-    public LibraryManagementSystem(List<LibraryItem> itemList) {
+    public LibraryManagementSystem(List<LibraryItem> itemList,List<User> userList) {
         addDummyBooks(itemList);
         addDummyMovies(itemList);
-        library = new Library(itemList);
+        userList.add(new User("123-4567","user@123"));
+        userList.add(new User("678-1423","user@456"));
+        library = new Library(itemList,userList);
     }
 
     private void addDummyMovies(List<LibraryItem> itemList) {

@@ -7,9 +7,11 @@ import java.util.List;
 public class Library {
     private List<LibraryItem> itemList;
     private List<LibraryItem> checkedOutList;
+    public List<User> userList;
 
-    public Library(List<LibraryItem> itemList) {
+    public Library(List<LibraryItem> itemList,List<User> userList) {
         this.itemList = itemList;
+        this.userList = userList;
         checkedOutList = new ArrayList<>();
     }
 
