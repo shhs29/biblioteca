@@ -10,10 +10,10 @@ import java.util.List;
 
 public class ReturnBookCommand implements Command{
     @Override
-    public void perform(Library library, List<User> userList, OutputDriver outputDriver, InputDriver inputDriver){
+    public void perform(Library library,User user, OutputDriver outputDriver, InputDriver inputDriver){
         outputDriver.print("Enter the book");
         String string = inputDriver.getTitle();
-        boolean isReturned = library.returnItem(string, ItemType.BOOK);
+        boolean isReturned = library.returnItem(user,string, ItemType.BOOK);
         if (isReturned) {
             outputDriver.print("Thank you for returning the book");
         } else {

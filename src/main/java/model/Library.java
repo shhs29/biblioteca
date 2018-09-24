@@ -11,7 +11,7 @@ public class Library {
 
     public Library(List<LibraryItem> itemList) {
         this.itemList = itemList;
-        userList= new ArrayList<>();
+        userList = new ArrayList<>();
         checkedOutList = new ArrayList<>();
     }
 
@@ -25,11 +25,13 @@ public class Library {
         return itemTitles;
     }
 
-    public boolean checkOutItem(String title, ItemType itemType) {
+    public boolean checkOutItem(User user, String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
                 if (libraryItem.getName().equals(title)) {
                     itemList.remove(libraryItem);
+                    userList.add(user);
+                    user.addItem(libraryItem);
                     checkedOutList.add(libraryItem);
                     return true;
                 }
@@ -49,15 +51,13 @@ public class Library {
         return false;
     }
 
-    public boolean returnItem(String title, ItemType itemType) {
-        for (LibraryItem libraryItem : checkedOutList) {
-            if (itemType == libraryItem.getType()) {
-                if (libraryItem.getName().equals(title)) {
-                    checkedOutList.remove(libraryItem);
-                    itemList.add(libraryItem);
-                    return true;
-                }
-            }
+    public boolean returnItem(User user, String title, ItemType itemType) {
+        LibraryItem libraryItem = user.findItem(title, itemType);
+        if (libraryItem != null) {
+            userList.remove(user);
+            checkedOutList.remove(libraryItem);
+            itemList.add(libraryItem);
+            return true;
         }
         return false;
     }

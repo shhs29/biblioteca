@@ -13,7 +13,7 @@ public enum Menu {
     LIST_BOOKS("1.List Books", new ListBooksCommand()),
     CHECKOUT_BOOK("2.Checkout Book", new AuthenticatedCommand(new CheckoutBookCommand())),
     RETURN_BOOK("3.Return Book", new AuthenticatedCommand(new ReturnBookCommand())),
-    LIST_MOVIES("4.List Movies",new ListMoviesCommand()),
+    LIST_MOVIES("4.List Movies", new ListMoviesCommand()),
     CHECKOUT_MOVIE("5.Checkout Movie", new AuthenticatedCommand(new CheckOutMoviesCommand())),
     RETURN_MOVIE("6.Return Movie", new AuthenticatedCommand(new ReturnMovieCommand()));
 
@@ -25,8 +25,8 @@ public enum Menu {
         this.command = command;
     }
 
-    public void perform(Library library, List<User> userList, OutputDriver output, InputDriver input) {
-        this.command.perform(library,userList, output, input);
+    public void perform(Library library, User user, OutputDriver output, InputDriver input) {
+        this.command.perform(library,user, output, input);
     }
 
     public void displayMenu(OutputDriver output) {

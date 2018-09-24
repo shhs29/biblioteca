@@ -8,7 +8,7 @@ import view.OutputDriver;
 import java.util.List;
 
 public class QuitCommand implements Command {
-    public void perform(Library library, List<User> userList, OutputDriver outputDriver, InputDriver inputDriver){
+    public void perform(Library library,User user,OutputDriver outputDriver, InputDriver inputDriver){
         outputDriver.print("Quit");
     }
 }

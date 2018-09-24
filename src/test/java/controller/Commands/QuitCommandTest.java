@@ -18,6 +18,7 @@ class QuitCommandTest {
     private List<User> userList = new ArrayList<>();
     private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
+    private User user = new User();
     private QuitCommand quitCommand = new QuitCommand();
 
     @DisplayName("should quit if option 0 is chosen")
@@ -26,8 +27,8 @@ class QuitCommandTest {
         OutputDriver outputMock = mock(OutputDriver.class);
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList,userList);
-        quitCommand.perform(library, outputMock, input);
+        Library library = new Library(itemList);
+        quitCommand.perform(library,user, outputMock, input);
         verify(outputMock).print("Quit");
     }
 }

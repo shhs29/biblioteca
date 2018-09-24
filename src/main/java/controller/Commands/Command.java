@@ -8,5 +8,5 @@ import view.OutputDriver;
 import java.util.List;
 
 public interface Command {
-    void perform(Library library, List<User> userList, OutputDriver outputDriver, InputDriver inputDriver);
+    void perform(Library library,User user, OutputDriver outputDriver, InputDriver inputDriver);
 }

@@ -20,6 +20,7 @@ class ReturnBookCommandTest {
     private List<User> userList = new ArrayList<>();
     private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
+    private User user = new User();
     private ReturnBookCommand returnBookCommand = new ReturnBookCommand();
     private CheckoutBookCommand checkoutBookCommand = new CheckoutBookCommand();
 
@@ -32,9 +33,9 @@ class ReturnBookCommandTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList,userList);
-        checkoutBookCommand.perform(library, outputMock, inputMock);
-        returnBookCommand.perform(library, outputMock, inputMock);
+        Library library = new Library(itemList);
+        checkoutBookCommand.perform(library,user, outputMock, inputMock);
+        returnBookCommand.perform(library,user, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank you for returning the book");
         verify(outputMock).print("That is not a valid book to return");
     }
@@ -48,9 +49,9 @@ class ReturnBookCommandTest {
         itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
         itemList.add(new Book("Chromosome 6", "Robin Cook", "2001"));
         itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
-        Library library = new Library(itemList,userList);
-        checkoutBookCommand.perform(library, outputMock, inputMock);
-        returnBookCommand.perform(library, outputMock, inputMock);
+        Library library = new Library(itemList);
+        checkoutBookCommand.perform(library,user, outputMock, inputMock);
+        returnBookCommand.perform(library,user, outputMock, inputMock);
         verify(outputMock, times(0)).print("Thank you for returning the book");
         verify(outputMock).print("That is not a valid book to return");
     }

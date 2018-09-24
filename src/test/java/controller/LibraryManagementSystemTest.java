@@ -20,7 +20,7 @@ class LibraryManagementSystemTest {
 
     private List<LibraryItem> itemList = new ArrayList<>();
     private List<User> userList = new ArrayList<>();
-    private LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(itemList,userList);
+    private LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem(itemList);
 
     private OutputDriver outputMock = mock(OutputDriver.class);
     private InputDriver inputMock = mock(InputDriver.class);

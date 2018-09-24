@@ -11,13 +11,10 @@ import java.util.List;
 //controller
 public class LibraryManagementSystem {
     private Library library;
-    public List<User> userList = new ArrayList<>();
 
     public LibraryManagementSystem(List<LibraryItem> itemList) {
         addDummyBooks(itemList);
         addDummyMovies(itemList);
-        userList.add(new User("123-4567","user@123"));
-        userList.add(new User("678-1423","user@456"));
         library = new Library(itemList);
     }
 
@@ -29,16 +26,16 @@ public class LibraryManagementSystem {
 
     public void showMainMenu(OutputDriver output, InputDriver input) {
         int option;
+        User user = new User();
         do {
             Menu[] menu = Menu.values();
-            for(Menu menuOption:menu){
+            for (Menu menuOption : menu) {
                 menuOption.displayMenu(output);
             }
             option = input.takeInput();
-            if(option<menu.length){
-                menu[option].perform(library,userList,output,input);
-            }
-            else {
+            if (option < menu.length) {
+                menu[option].perform(library,user, output, input);
+            } else {
                 output.print("Select a valid option!");
             }
             output.printHorizontalLine();
@@ -59,6 +56,6 @@ public class LibraryManagementSystem {
 
 
     public boolean contains(String title, ItemType itemType) {
-        return library.contains(title,itemType);
+        return library.contains(title, itemType);
     }
 }

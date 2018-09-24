@@ -5,18 +5,23 @@ import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AuthenticatedCommand implements Command {
     private static boolean isLogged = false;
     private Command command;
+    private List<User> userList;
 
     public AuthenticatedCommand(Command command) {
         this.command = command;
+        userList = new ArrayList<>();
+        userList.add(new User("123-4567","user@123"));
+        userList.add(new User("678-1423","user@456"));
     }
 
     @Override
-    public void perform(Library library, List<User> userList, OutputDriver outputDriver, InputDriver inputDriver) {
+    public void perform(Library library, User user,OutputDriver outputDriver, InputDriver inputDriver) {
         String userId;
         String password;
         if (!isLogged) {
@@ -24,22 +29,24 @@ public class AuthenticatedCommand implements Command {
             userId = inputDriver.getUserDetails();
             outputDriver.print("Password:");
             password = inputDriver.getUserDetails();
-            isLogged = validateUser(userId, password, userList);
+            user = new User(userId,password);
+            isLogged = validateUser(user, userList);
             if (isLogged) {
                 outputDriver.print("Login Successful");
-                this.command.perform(library, userList, outputDriver, inputDriver);
+
+                this.command.perform(library,user, outputDriver, inputDriver);
 
             } else {
                 outputDriver.print("Please login first");
             }
         } else {
-            this.command.perform(library, userList, outputDriver, inputDriver);
+            this.command.perform(library, user, outputDriver, inputDriver);
         }
     }
 
-    private boolean validateUser(String userId, String password, List<User> userList) {
+    private boolean validateUser(User user, List<User> userList) {
         for (User userAccount : userList) {
-            if (userAccount.verify(userId, password) == 1) {
+            if (userAccount.equals(user)) {
                 return true;
             }
         }
