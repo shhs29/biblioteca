@@ -28,14 +28,14 @@ public class Library {
         return itemTitles;
     }
 
-    public void addUser(User user) {
+    void addUser(User user) {
         userList.add(user);
     }
 
     public boolean checkOutItem(String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
-                if (libraryItem.getName().equals(title)) {
+                if (libraryItem.getName().toLowerCase().equals(title.toLowerCase())) {
                     itemList.remove(libraryItem);
                     currentUser.addItem(libraryItem);
                     return true;

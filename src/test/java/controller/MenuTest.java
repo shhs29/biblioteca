@@ -13,8 +13,6 @@ import static org.mockito.Mockito.*;
 
 class MenuTest {
     private List<LibraryItem> itemList = new ArrayList<>();
-    private List<User> userList = new ArrayList<>();
-    private OutputDriver output = new OutputDriver();
     private InputDriver input = new InputDriver();
     private User user = new User();
 

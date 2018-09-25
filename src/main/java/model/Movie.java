@@ -37,6 +37,6 @@ public class Movie implements LibraryItem {
 
     @Override
     public boolean equals(String string) {
-        return this.name.equals(string);
+        return this.name.toLowerCase().equals(string.toLowerCase());
     }
 }

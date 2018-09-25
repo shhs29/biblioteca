@@ -46,7 +46,7 @@ public class User {
     public LibraryItem findItem(String title, ItemType itemType) {
         for (LibraryItem libraryItem : itemList) {
             if (itemType == libraryItem.getType()) {
-                if (libraryItem.getName().equals(title)) {
+                if (libraryItem.getName().toLowerCase().equals(title.toLowerCase())) {
                     itemList.remove(libraryItem);
                     return libraryItem;
                 }

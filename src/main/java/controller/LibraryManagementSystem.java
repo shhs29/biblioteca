@@ -32,7 +32,7 @@ public class LibraryManagementSystem {
             user = library.getCurrentUser();
             Menu[] menu = Menu.values();
             for (Menu menuOption : menu) {
-                menuOption.displayMenu(output);
+                menuOption.displayMenu(library, output);
             }
             option = input.takeInput();
             if (option < menu.length) {

@@ -37,7 +37,6 @@ class LibraryManagementSystemTest {
     void testForQuit() {
         when(inputMock.takeInput()).thenReturn(0);
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock).printMainMenu();
         verify(outputMock).print("0.Quit");
         verify(outputMock).print("1.List Books");
         verify(outputMock).print("2.Checkout Book");
@@ -45,8 +44,6 @@ class LibraryManagementSystemTest {
         verify(outputMock).print("4.List Movies");
         verify(outputMock).print("5.Checkout Movie");
         verify(outputMock).print("6.Return Movie");
-        verify(outputMock).print("7.Log Out");
-        verify(outputMock).print("8.Print User Details");
         verify(outputMock).print("Quit");
     }
 
@@ -55,7 +52,6 @@ class LibraryManagementSystemTest {
     void testForListOfBooks() {
         when(inputMock.takeInput()).thenReturn(1).thenReturn(0);
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock, times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -63,8 +59,6 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
         verify(outputMock, times(1)).print("Quit");
         verify(outputMock, times(1)).printAsColumns("Tinkle,Anant Pai,1996");
         verify(outputMock, times(1)).printAsColumns("Gullivers Travels,Jonathan Swift,2004");
@@ -73,9 +67,8 @@ class LibraryManagementSystemTest {
     @DisplayName("should print the Main Menu and print Select a valid option! for invalid option")
     @Test
     void testForInvalidOption1() {
-        when(inputMock.takeInput()).thenReturn(7).thenReturn(0);
+        when(inputMock.takeInput()).thenReturn(9).thenReturn(0);
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -83,8 +76,6 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
         verify(outputMock).print("Select a valid option!");
         verify(outputMock).print("Quit");
     }
@@ -93,8 +84,8 @@ class LibraryManagementSystemTest {
     @Test
     void testForInvalidOption2() {
         when(inputMock.takeInput()).thenReturn(1).thenReturn(7).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(3)).printMainMenu();
         verify(outputMock, times(3)).print("0.Quit");
         verify(outputMock, times(3)).print("1.List Books");
         verify(outputMock, times(3)).print("2.Checkout Book");
@@ -102,9 +93,10 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(3)).print("4.List Movies");
         verify(outputMock, times(3)).print("5.Checkout Movie");
         verify(outputMock, times(3)).print("6.Return Movie");
-        verify(outputMock, times(3)).print("7.Log Out");
-        verify(outputMock, times(3)).print("8.Print User Details");
-        verify(outputMock, times(1)).print("Select a valid option!");
+        verify(outputMock).print("Library Number:");
+        verify(outputMock).print("Password:");
+        verify(outputMock).print("Login Successful");
+        verify(outputMock).print("Successfully logged out");
         verify(outputMock, times(1)).print("Quit");
         verify(outputMock, times(1)).printAsColumns("Tinkle,Anant Pai,1996");
         verify(outputMock, times(1)).printAsColumns("Gullivers Travels,Jonathan Swift,2004");
@@ -115,8 +107,8 @@ class LibraryManagementSystemTest {
     void testForCheckOutBook() {
         when(inputMock.takeInput()).thenReturn(2).thenReturn(1).thenReturn(0);
         when(inputMock.getTitle()).thenReturn("Chromosome 6");
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(3)).print("0.Quit");
         verify(outputMock, times(3)).print("1.List Books");
         verify(outputMock, times(3)).print("2.Checkout Book");
@@ -124,9 +116,11 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(3)).print("4.List Movies");
         verify(outputMock, times(3)).print("5.Checkout Movie");
         verify(outputMock, times(3)).print("6.Return Movie");
-        verify(outputMock, times(3)).print("7.Log Out");
-        verify(outputMock, times(3)).print("8.Print User Details");
-
+        verify(outputMock, times(2)).print("7.Log Out");
+        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock).print("Library Number:");
+        verify(outputMock).print("Password:");
+        verify(outputMock).print("Login Successful");
         verify(outputMock).print("Quit");
         assertFalse(libraryManagementSystem.contains("Chromosome6", ItemType.BOOK));
     }
@@ -134,10 +128,10 @@ class LibraryManagementSystemTest {
     @DisplayName("should not check-out a book if the book is not available")
     @Test
     void testForCheckOutBookNotAvailable() {
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.takeInput()).thenReturn(2).thenReturn(1).thenReturn(0);
         when(inputMock.getTitle()).thenReturn("The Fault In Our Stars");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(3)).print("0.Quit");
         verify(outputMock, times(3)).print("1.List Books");
         verify(outputMock, times(3)).print("2.Checkout Book");
@@ -145,9 +139,11 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(3)).print("4.List Movies");
         verify(outputMock, times(3)).print("5.Checkout Movie");
         verify(outputMock, times(3)).print("6.Return Movie");
-        verify(outputMock, times(3)).print("7.Log Out");
-        verify(outputMock, times(3)).print("8.Print User Details");
-
+        verify(outputMock, times(2)).print("7.Log Out");
+        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock).print("Library Number:");
+        verify(outputMock).print("Password:");
+        verify(outputMock).print("Login Successful");
         verify(outputMock).print("Quit");
         assertFalse(libraryManagementSystem.contains("The Fault In Our Stars", ItemType.BOOK));
     }
@@ -156,9 +152,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForReturnBook() {
         when(inputMock.takeInput()).thenReturn(2).thenReturn(3).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("Tinkle").thenReturn("Tinkle");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(3)).print("0.Quit");
         verify(outputMock, times(3)).print("1.List Books");
         verify(outputMock, times(3)).print("2.Checkout Book");
@@ -166,8 +162,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(3)).print("4.List Movies");
         verify(outputMock, times(3)).print("5.Checkout Movie");
         verify(outputMock, times(3)).print("6.Return Movie");
-        verify(outputMock, times(3)).print("7.Log Out");
-        verify(outputMock, times(3)).print("8.Print User Details");
+        verify(outputMock, times(2)).print("7.Log Out");
+        verify(outputMock, times(2)).print("8.Print User Details");
 
         verify(outputMock).print("Quit");
         assertTrue(libraryManagementSystem.contains("Tinkle", ItemType.BOOK));
@@ -177,9 +173,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForReturnBook1() {
         when(inputMock.takeInput()).thenReturn(3).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("The Fault In Our Stars");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -187,8 +183,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock, times(1)).print("7.Log Out");
+        verify(outputMock, times(1)).print("8.Print User Details");
         verify(outputMock, times(1)).print("That is not a valid book to return");
 
         verify(outputMock).print("Quit");
@@ -199,8 +195,8 @@ class LibraryManagementSystemTest {
     @Test
     void testForListOfMovies() {
         when(inputMock.takeInput()).thenReturn(4).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock, times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -208,8 +204,6 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
         verify(outputMock, times(1)).print("Quit");
         verify(outputMock, times(1)).printAsColumnsMovie("Name,Director,Release Year,Rating");
         verify(outputMock, times(1)).printAsColumnsMovie("Paper Towns,John Green,2017,Unrated");
@@ -220,9 +214,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForCheckOutMovie() {
         when(inputMock.takeInput()).thenReturn(5).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("A Quiet Place");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -230,8 +224,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock, times(1)).print("7.Log Out");
+        verify(outputMock, times(1)).print("8.Print User Details");
 
         verify(outputMock).print("Quit");
 
@@ -242,9 +236,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForCheckOutMovieNotAvailable() {
         when(inputMock.takeInput()).thenReturn(5).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("Jurassic Park");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -252,8 +246,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock, times(1)).print("7.Log Out");
+        verify(outputMock, times(1)).print("8.Print User Details");
 
         verify(outputMock).print("Quit");
 
@@ -265,9 +259,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForReturnMovie() {
         when(inputMock.takeInput()).thenReturn(5).thenReturn(6).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("Paper Towns").thenReturn("Paper Towns");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(3)).print("0.Quit");
         verify(outputMock, times(3)).print("1.List Books");
         verify(outputMock, times(3)).print("2.Checkout Book");
@@ -286,9 +280,9 @@ class LibraryManagementSystemTest {
     @Test
     void testForReturnMovie1() {
         when(inputMock.takeInput()).thenReturn(6).thenReturn(0);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         when(inputMock.getTitle()).thenReturn("Jurassic Park");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -296,8 +290,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
+        verify(outputMock, times(1)).print("7.Log Out");
+        verify(outputMock, times(1)).print("8.Print User Details");
         verify(outputMock, times(1)).print("That is not a valid movie to return");
 
         verify(outputMock).print("Quit");
@@ -310,7 +304,6 @@ class LibraryManagementSystemTest {
         when(inputMock.takeInput()).thenReturn(7).thenReturn(0);
         when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -318,10 +311,11 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
-
+        verify(outputMock).print("Library Number:");
+        verify(outputMock).print("Password:");
+        verify(outputMock).print("Login Successful");
         verify(outputMock).print("Successfully logged out");
+        verify(outputMock).print("Quit");
         assertFalse(libraryManagementSystem.contains("Jurassic Park", ItemType.BOOK));
     }
 
@@ -331,7 +325,6 @@ class LibraryManagementSystemTest {
         when(inputMock.takeInput()).thenReturn(8).thenReturn(0);
         when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
         libraryManagementSystem.showMainMenu(outputMock, inputMock);
-        //verify(outputMock,times(2)).printMainMenu();
         verify(outputMock, times(2)).print("0.Quit");
         verify(outputMock, times(2)).print("1.List Books");
         verify(outputMock, times(2)).print("2.Checkout Book");
@@ -339,9 +332,8 @@ class LibraryManagementSystemTest {
         verify(outputMock, times(2)).print("4.List Movies");
         verify(outputMock, times(2)).print("5.Checkout Movie");
         verify(outputMock, times(2)).print("6.Return Movie");
-        verify(outputMock, times(2)).print("7.Log Out");
-        verify(outputMock, times(2)).print("8.Print User Details");
-
+        verify(outputMock, times(1)).print("7.Log Out");
+        verify(outputMock, times(1)).print("8.Print User Details");
         verify(outputMock).print("User name,user@example.com,9854673425");
         assertFalse(libraryManagementSystem.contains("Jurassic Park", ItemType.BOOK));
     }

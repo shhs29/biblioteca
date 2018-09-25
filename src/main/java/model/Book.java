@@ -31,6 +31,6 @@ public class Book implements LibraryItem{
 
     @Override
     public boolean equals(String string) {
-        return this.title.equals(string);
+        return this.title.toLowerCase().equals(string.toLowerCase());
     }
 }
