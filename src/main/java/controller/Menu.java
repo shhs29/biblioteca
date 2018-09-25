@@ -16,8 +16,8 @@ public enum Menu {
     LIST_MOVIES("4.List Movies", new ListMoviesCommand()),
     CHECKOUT_MOVIE("5.Checkout Movie", new AuthenticatedCommand(new CheckOutMoviesCommand())),
     RETURN_MOVIE("6.Return Movie", new AuthenticatedCommand(new ReturnMovieCommand())),
-    LOG_OUT("7.Log Out",new AuthenticatedCommand(new LogOutCommand())),
-    USER_DETAILS("8.Print User Details",new AuthenticatedCommand(new UserDetailsCommand()));
+    LOG_OUT("7.Log Out", new AuthenticatedCommand(new LogOutCommand())),
+    USER_DETAILS("8.Print User Details", new AuthenticatedCommand(new UserDetailsCommand()));
 
     private String string;
     private Command command;
@@ -28,10 +28,11 @@ public enum Menu {
     }
 
     public void perform(Library library, User user, OutputDriver output, InputDriver input) {
-        this.command.perform(library,user, output, input);
+        this.command.perform(library, user, output, input);
     }
 
     public void displayMenu(OutputDriver output) {
         output.print(string);
     }
 }
+

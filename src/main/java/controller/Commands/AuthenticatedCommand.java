@@ -5,9 +5,6 @@ import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AuthenticatedCommand implements Command {
     private Command command;
 
@@ -31,9 +28,8 @@ public class AuthenticatedCommand implements Command {
             } else {
                 outputDriver.print("Please login first");
             }
-        }
-        else {
-            this.command.perform(library,user,outputDriver,inputDriver);
+        } else {
+            this.command.perform(library, user, outputDriver, inputDriver);
         }
     }
 }

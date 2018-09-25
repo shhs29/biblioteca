@@ -132,7 +132,10 @@ class MenuTest {
         Library library = new Library(itemList);
 
         Menu.LIST_MOVIES.perform(library,user, outputMock, input);
-        verify(outputMock).printAsColumns("Paper Towns,John Green,2017,Unrated");
+
+        verify(outputMock,times(2)).printHorizontalLine();
+        verify(outputMock).printAsColumnsMovie("Name,Director,Release Year,Rating");
+        verify(outputMock).printAsColumnsMovie("Paper Towns,John Green,2017,Unrated");
     }
 
     @DisplayName("should checkout a movie if option 5 is chosen")
@@ -193,9 +196,9 @@ class MenuTest {
         verify(outputMock,times(1)).print("Library Number:");
         verify(outputMock,times(1)).print("Password:");
         verify(outputMock).print("Login Successful");
-        verify(outputMock,times(1)).print("Enter the movie");
-        verify(outputMock, times(0)).print("Thank you for returning the movie");
-        verify(outputMock).print("That is not a valid movie to return");
+        verify(outputMock,times(2)).print("Enter the movie");
+        verify(outputMock, times(1)).print("Thank you for returning the movie");
+        verify(outputMock).print("Thank You! Enjoy the Movie");
     }
 
     @DisplayName("should not return a movie if the movie is not in this library")
@@ -219,4 +222,29 @@ class MenuTest {
         verify(outputMock).print("That is not a valid movie to return");
     }
 
+    @DisplayName("should logout")
+    @Test
+    void testForLogOut() {
+        OutputDriver outputMock = mock(OutputDriver.class);
+        InputDriver inputMock = mock(InputDriver.class);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
+        itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
+        itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
+        Library library = new Library(itemList);
+        Menu.LOG_OUT.perform(library,user, outputMock, inputMock);
+        verify(outputMock).print("Successfully logged out");
+    }
+
+    @DisplayName("should print user details")
+    @Test
+    void testForUserDetails() {
+        OutputDriver outputMock = mock(OutputDriver.class);
+        InputDriver inputMock = mock(InputDriver.class);
+        when(inputMock.getUserDetails()).thenReturn("123-4567").thenReturn("user@123");
+        itemList.add(new Book("Tinkle", "Anant Pai", "1996"));
+        itemList.add(new Movie("Paper Towns", "John Green", "2017", 0));
+        Library library = new Library(itemList);
+        Menu.USER_DETAILS.perform(library,user, outputMock, inputMock);
+        verify(outputMock).print("User name,user@example.com,9854673425");
+    }
 }
