@@ -6,9 +6,8 @@ import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
-import java.util.List;
-
-import static controller.MenuDisplay.*;
+import static controller.MenuDisplay.DISPLAY;
+import static controller.MenuDisplay.HIDE;
 
 public enum Menu {
     QUIT("0.Quit", new QuitCommand(), DISPLAY),

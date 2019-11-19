@@ -7,10 +7,10 @@ import java.util.Objects;
 public class User {
     private final String libraryNumber;
     private final String password;
-    private List<LibraryItem> itemList;
     private final String name;
     private final String phoneNumber;
     private final String emailId;
+    private List<LibraryItem> itemList;
 
     public User() {
         this.libraryNumber = null;

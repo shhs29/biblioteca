@@ -1,7 +1,5 @@
 package view;
 
-import java.util.List;
-
 public class OutputDriver implements Output {
     @Override
     public void print(Object string) {

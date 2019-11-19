@@ -1,6 +1,5 @@
 import controller.LibraryManagementSystem;
 import model.LibraryItem;
-import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 

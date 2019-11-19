@@ -1,7 +1,7 @@
 package model;
 
 //represents a book
-public class Book implements LibraryItem{
+public class Book implements LibraryItem {
     private final String title;
     private final String author;
     private final String yearOfPublishing;
@@ -15,7 +15,7 @@ public class Book implements LibraryItem{
     }
 
     @Override
-    public ItemType getType(){
+    public ItemType getType() {
         return this.itemType;
     }
 

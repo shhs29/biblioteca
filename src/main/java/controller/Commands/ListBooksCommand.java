@@ -9,7 +9,7 @@ import view.OutputDriver;
 import java.util.List;
 
 public class ListBooksCommand implements Command {
-    public void perform(Library library,User user, OutputDriver outputDriver, InputDriver inputDriver){
+    public void perform(Library library, User user, OutputDriver outputDriver, InputDriver inputDriver) {
         List<String> bookList = library.getItemDetails(ItemType.BOOK);
         outputDriver.printHorizontalLine();
         outputDriver.printAsColumns("Title,Author,Year Of Publishing");

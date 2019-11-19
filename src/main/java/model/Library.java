@@ -5,8 +5,8 @@ import java.util.List;
 
 //manages the jobs of a librarian
 public class Library {
-    private List<LibraryItem> itemList;
     public List<User> userList;
+    private List<LibraryItem> itemList;
     private User currentUser;
 
     public Library(List<LibraryItem> itemList) {
@@ -77,6 +77,10 @@ public class Library {
         return currentUser;
     }
 
+    public void setCurrentUser(User user) {
+        currentUser = user;
+    }
+
     private User validateUser(User user) {
         for (User userAccount : userList) {
             if (userAccount.equals(user)) {
@@ -84,9 +88,5 @@ public class Library {
             }
         }
         return null;
-    }
-
-    public void setCurrentUser(User user) {
-        currentUser = user;
     }
 }

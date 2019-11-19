@@ -17,7 +17,7 @@ public class Movie implements LibraryItem {
     }
 
     @Override
-    public ItemType getType(){
+    public ItemType getType() {
         return this.itemType;
     }
 

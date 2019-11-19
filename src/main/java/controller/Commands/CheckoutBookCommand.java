@@ -6,11 +6,9 @@ import model.User;
 import view.InputDriver;
 import view.OutputDriver;
 
-import java.util.List;
-
 public class CheckoutBookCommand implements Command {
     @Override
-    public void perform(Library library,User user, OutputDriver outputDriver, InputDriver inputDriver) {
+    public void perform(Library library, User user, OutputDriver outputDriver, InputDriver inputDriver) {
         outputDriver.print("Enter the book");
         String string = inputDriver.getTitle();
         boolean isCheckedOut = library.checkOutItem(string, ItemType.BOOK);
