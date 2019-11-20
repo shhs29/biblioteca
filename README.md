@@ -6,6 +6,9 @@ A simple library management system which provides basic functionalities like
 3. Return books/movies
 
 ## Steps to compile
-1. Change to directory containing Main class (cd src/main/java)
-2. javac BibliotecaApplication.java
-3. java BibliotecaApplication
+1. Change to directory containing Main class <br>
+```cd src/main/java```
+2. Compile the application <br>
+```javac BibliotecaApplication.java```
+3. Run the application <br>
+```java BibliotecaApplication```
